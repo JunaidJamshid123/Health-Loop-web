@@ -19,20 +19,20 @@ export default function MetricsSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-24 section-beige" ref={ref}>
+    <section className="py-16 sm:py-24 section-beige" ref={ref}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-foreground text-center mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground text-center mb-3 sm:mb-4">
           Track What <span className="text-primary">Matters</span>
         </h2>
-        <p className="text-text-secondary text-center mb-12 max-w-md mx-auto">
+        <p className="text-sm sm:text-base text-text-secondary text-center mb-8 sm:mb-12 max-w-md mx-auto">
           Monitor all your key health metrics in one beautiful dashboard.
         </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 max-w-4xl mx-auto">
           {metrics.map((m, i) => (
             <div
               key={m.label}
-              className={`bg-card rounded-2xl p-5 border border-border shadow-sm transition-all duration-500 ${
+              className={`bg-card rounded-2xl p-4 sm:p-5 border border-border shadow-sm transition-all duration-500 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
               style={{ transitionDelay: `${i * 80}ms` }}

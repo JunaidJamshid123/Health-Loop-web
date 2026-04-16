@@ -10,15 +10,15 @@ export default function HowItWorksSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="how-it-works" className="py-24 section-beige-light" ref={ref}>
+    <section id="how-it-works" className="py-16 sm:py-24 section-beige-light" ref={ref}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-foreground text-center mb-16">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground text-center mb-10 sm:mb-16">
           Getting Started is <span className="text-primary">Easy</span>
         </h2>
 
-        <div className="grid sm:grid-cols-3 gap-8 relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 relative">
           {/* Connecting line */}
-          <div className="hidden sm:block absolute top-10 left-[20%] right-[20%] h-0.5 border-t-2 border-dashed border-border" />
+          <div className="hidden md:block absolute top-10 left-[20%] right-[20%] h-0.5 border-t-2 border-dashed border-border" />
 
           {steps.map((s, i) => (
             <div
@@ -26,11 +26,11 @@ export default function HowItWorksSection() {
               className={`text-center relative transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <div className={`w-20 h-20 rounded-full ${s.color} flex items-center justify-center text-3xl mx-auto mb-4 shadow-lg relative z-10`}>
+              <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full ${s.color} flex items-center justify-center text-2xl sm:text-3xl mx-auto mb-4 shadow-lg relative z-10`}>
                 {s.icon}
               </div>
               <span className="text-xs font-bold text-text-secondary uppercase tracking-wider">Step {i + 1}</span>
-              <h3 className="text-lg font-bold text-foreground mt-1">{s.title}</h3>
+              <h3 className="text-base sm:text-lg font-bold text-foreground mt-1">{s.title}</h3>
               <p className="text-sm text-text-secondary mt-2 max-w-xs mx-auto">{s.desc}</p>
             </div>
           ))}

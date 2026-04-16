@@ -19,25 +19,25 @@ export default function FeaturesSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="features" className="py-24 section-beige-light">
+    <section id="features" className="py-16 sm:py-24 section-beige-light">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
             Everything You Need to Stay <span className="text-primary">Healthy</span>
           </h2>
         </div>
 
-        <div ref={ref} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {features.map((f, i) => (
             <div
               key={f.title}
-              className={`bg-card rounded-[1.25rem] p-6 border border-border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${
+              className={`bg-card rounded-[1.25rem] p-5 sm:p-6 border border-border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <div className={`w-14 h-14 rounded-2xl ${f.color} flex items-center justify-center mb-4`}>
-                <img src={f.icon} alt={f.title} className="w-8 h-8 object-contain" />
+              <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl ${f.color} flex items-center justify-center mb-4`}>
+                <img src={f.icon} alt={f.title} className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
               </div>
               <h3 className="text-lg font-bold text-foreground mb-2">{f.title}</h3>
               <p className="text-sm text-text-secondary leading-relaxed">{f.desc}</p>

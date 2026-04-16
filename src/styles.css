@@ -88,10 +88,12 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    overflow-x: hidden;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 }
 
@@ -133,4 +135,13 @@
 
 .animate-float-delay {
   animation: float 4s ease-in-out 1s infinite;
+}
+
+/* Hide scrollbar for carousel/horizontal scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

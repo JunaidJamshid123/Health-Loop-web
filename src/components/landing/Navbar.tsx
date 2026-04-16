@@ -55,13 +55,15 @@ export default function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border px-4 py-4 space-y-3">
+        <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border px-4 py-4 space-y-1">
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-muted-foreground hover:text-foreground py-2">
+            <a key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-muted-foreground hover:text-foreground py-2.5 px-2 rounded-lg hover:bg-muted transition-colors">
               {l.label}
             </a>
           ))}
-          <Button variant="hero" size="default" className="w-full">Download App</Button>
+          <div className="pt-2">
+            <Button variant="hero" size="default" className="w-full">Download App</Button>
+          </div>
         </div>
       )}
     </nav>

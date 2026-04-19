@@ -44,7 +44,7 @@ export const Route = createRootRoute({
       {
         rel: "icon",
         type: "image/png",
-        href: "/favicon.png",
+        href: `${import.meta.env.BASE_URL}favicon.png`,
       },
       {
         rel: "stylesheet",
